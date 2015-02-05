@@ -1,0 +1,43 @@
+<div class="row">
+    <section class="register">
+
+
+        <form ng-app="" ng-controller="RegistrationController" name="myform" novalidate> 
+
+            <h1>Register</h1>
+            <p>Enter your info to create an Account.</p>
+            <div class="form-group">
+                <input type="text" name="username" ng-model="username" placeholder="Username" required>
+                <span style="text-danger" ng-show="myform.username.$dirty && myform.username.$invalid">
+                    <span ng-show="myform.username.$error.required">Username is required</span>
+                </span>
+            </div>
+
+            <div class="form-group">
+                <input type="email" name="email" ng-model="email" placeholder="Email" required>
+                <span style="text-danger" ng-show"myform.email.$dirty && myform.email.$invalid">
+
+                    <span ng-show="myform.email.$error.required">Email is required</span>
+                    <span ng-show="myform.email.$error.email">Please enter a valid email address</span>
+                </span>
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password" ng-model="password" placeholder="Password" required>
+                <span style="text-danger" ng-show="myform.password.$dirty && myform.password.$invalid">
+                    <span ng-show="myform.password.$error.required">Password is Required</span>
+                </span>
+            </div>
+
+
+                <input type="submit" class="btn btn-default" 
+                  ng-disabled="myform.username.$dirty && myform.username.$invalid || myform.email.$dirty && myform.email.$invalid || myform.password.$dirty && myform.password.$invalid">
+
+        </form>
+
+
+
+
+
+    </section>
+</div>
